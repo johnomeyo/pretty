@@ -5,12 +5,14 @@ import { Blog } from "./pages/blog";
 import { About } from "./pages/about";
 import { Contact } from "./pages/contact";
 import { Search } from "./pages/search";
+import { Home } from "./pages/home";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="blog" element={<Blog />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />

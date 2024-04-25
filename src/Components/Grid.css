@@ -1,0 +1,15 @@
+.grid-container {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 5px;
+}
+.grid-item {
+  background-color: rgb(233, 227, 227);
+  height: 300px;
+}
+.grid-item img {
+  width: 100%; /* Ensure images don't exceed their container width */
+  height: 100%; /* Ensure images don't exceed their container height */
+  object-fit: fill;
+}

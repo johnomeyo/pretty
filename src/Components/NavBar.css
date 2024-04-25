@@ -4,11 +4,14 @@
   align-items: center;
   position: sticky;
   top: 0;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 nav .title {
-  font-size: 1.5rem;
-  margin: 1rem;
+  font-size: 2.5rem;
+  margin: 2rem;
   font-weight: bold;
+
   text-decoration: none;
 }
 nav ul {
@@ -33,6 +36,7 @@ nav ul li a:not(.active):hover {
 }
 nav .menu {
   display: none;
+  margin-top: 25px;
   position: absolute;
   top: 0.75rem;
   right: 0.5rem;
@@ -43,12 +47,13 @@ nav .menu {
 }
 
 nav .menu span {
-  height: 0.4rem;
-  width: 80%;
+  margin: 0;
+  height: 0.1rem;
+  width: 70%;
   background-color: black;
   border-radius: 0.2rem;
 }
-@media (max-width: 480px) {
+@media (max-width: 525px) {
   nav .menu {
     display: flex;
   }
@@ -73,3 +78,4 @@ nav .menu span {
     text-align: center;
   }
 }
+
