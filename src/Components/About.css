@@ -1,0 +1,56 @@
+.about-text-container {
+  background: linear-gradient(
+    90deg,
+    rgba(94, 94, 110, 1) 0%,
+    rgba(237, 237, 244, 1) 63%,
+    rgba(176, 178, 179, 1) 100%
+  );
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 50dvh;
+  padding: 2rem;
+  font-size: 35px;
+  color: white;
+}
+.about-intro {
+  display: flex;
+  justify-content: flex-start;
+  /* flex-wrap: wrap; */
+}
+p {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+ img {
+  height: 58.7vh;
+  width: 100%;
+  object-fit: cover;
+}
+.about-us-trio {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  /* flex-wrap: wrap; */
+}
+.abt-text {
+  height: 30vdh;
+  background-color: rgb(192, 187, 187);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-transform: uppercase;
+}
+.abt-info {
+  display: flex;
+  align-items: center;
+  padding: auto;
+  margin: 10px;
+  font-size: 20px;
+}

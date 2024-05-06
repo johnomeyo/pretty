@@ -18,7 +18,6 @@
 .form {
   width: 50%;
   margin: 20px 50px 20px 20px;
-  display: block;
 }
 .image {
   width: 50%;
@@ -65,4 +64,23 @@ button {
 }
 h1 {
   font-size: 35px;
+}
+@media (max-width: 525px) {
+  .contact-form {
+    width: 100vmin;
+    display: flex;
+    flex-direction: column;
+    box-shadow: none;
+  }
+  .form {
+    width: 100vmin;
+    margin: 20px
+  }
+  .image{
+    width: 100%;
+  }
+  .image img{
+    border-radius: 0%;
+    /* height: 100%; */
+  }
 }
