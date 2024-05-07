@@ -5,7 +5,7 @@ export const About = () => {
   return (
     <>
       <div className="about-intro">
-        <AboutText />
+        <AboutText text="At Pretty, passionate photographers share free, high-resolution images, igniting creativity for everyone. Explore our vast library and join the inspiring community" />
         <img
           loading="lazy"
           src="https://images.unsplash.com/photo-1637946175559-22c4fe13fc54?q=80&w=1827&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -19,7 +19,7 @@ export const About = () => {
         <div className="abt-info">
           <p>
             {
-              "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Namvoluptatem praesentium perferendis obcaecati nihil! Magni voluptatefugit, necessitatibus maxime natus quam quaerat adipisci eveniet quiadicta consectetur architecto tenetur dolore."
+              "We believe that beautiful images shouldn't be a privilege reserved for a select few. That's why we connect a passionate global community of photographers who generously share their work, fostering a space for creativity and inspiration."
             }
           </p>
         </div>
@@ -34,7 +34,7 @@ export const About = () => {
           src="https://images.unsplash.com/photo-1714602679012-9d34aca206ce?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="photo of a library"
         />
-        <AboutText />
+        <AboutText text="Unleash your creative potential with Pretty's free, stunning, and royalty-free stock photos. Download millions of high-resolution images for any project, absolutely free." />
       </div>
     </>
   );

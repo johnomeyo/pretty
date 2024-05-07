@@ -21,7 +21,7 @@
 p {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
- img {
+img {
   height: 58.7vh;
   width: 100%;
   object-fit: cover;
@@ -30,7 +30,6 @@ p {
   display: flex;
   justify-content: space-between;
   margin: 0;
-  /* flex-wrap: wrap; */
 }
 .abt-text {
   height: 30vdh;
@@ -53,4 +52,21 @@ h3 {
   padding: auto;
   margin: 10px;
   font-size: 20px;
+}
+@media (max-width: 560px) {
+  .about-us-trio {
+    flex-wrap: wrap;
+  }
+  .about-intro {
+    flex-wrap: wrap;
+  }
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 640px) {
+  p {
+    font-size: 20px;
+  }
 }

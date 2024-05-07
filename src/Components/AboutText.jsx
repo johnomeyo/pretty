@@ -1,13 +1,9 @@
 import "./About.css";
 
-export const AboutText = () => {
+export const AboutText = (props) => {
   return (
     <div className="about-text-container">
-      <p>
-        {
-          "Welcome to HERoines Inc.A safe space and platform to help women master real-life experience "
-        }
-      </p>
+      <p>{props.text}</p>
     </div>
   );
-}
+};
