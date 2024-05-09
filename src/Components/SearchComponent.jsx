@@ -30,7 +30,7 @@ export const SearchBar = () => {
             autoComplete="on"
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <button type="submit">{`Search ${inputValue}`}</button>
+          <button type="submit">{`Search`}</button>
         </form>
       </div>
       {inputValue === "" ? (
