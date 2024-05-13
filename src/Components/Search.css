@@ -28,6 +28,8 @@ input {
   height: 40px;
 }
 .search-suggestions {
+  display: flex;
+  flex-direction: column;
   width: 615px;
   margin-top: 20px;
   border-radius: 10px;
