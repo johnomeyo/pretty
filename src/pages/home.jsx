@@ -17,10 +17,10 @@ export const Home = () => {
   };
   useEffect(() => {
     fetchImages();
-  });
+  }, []);
   let gridItems = images.map((image) => {
     return (
-      <div className="grid-item" key={image.id}>
+      <div className="grid-item" >
         {images.length > 0 && (
           <img loading="lazy" src={image.urls.small} alt="" />
         )}

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import SearchImage from "../Assets/search.png";
+import axios from "axios";
 import "./Search.css";
+import "./Grid.css";
 export const SearchBar = () => {
   const suggestions = [
     "Street photography",
@@ -9,6 +11,7 @@ export const SearchBar = () => {
     "Black and white",
     "Relaxing images",
   ];
+  //filter such suggestions
   const [inputValue, setInputValue] = useState("");
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   useEffect(() => {
@@ -23,11 +26,34 @@ export const SearchBar = () => {
         key={index}
         onClick={() => {
           setInputValue(mappedSuggestion);
-          console.log(inputValue);
         }}
       >
         {mappedSuggestion}
       </p>
+    );
+  });
+  // search for images
+  const [images, setImages] = useState([]);
+  const searchImages = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.unsplash.com/search/photos/?client_id=F00UCpYu88LP7MuIWVdSHaf8gM3udxMOEo6QMHwZNzc&query=${inputValue}`
+      );
+      const data = response.data.results;
+      // setImages((prevImages) => [...prevImages, ...data]);
+      setImages(data);
+      console.log(images);
+    } catch (e) {
+      console.log(`An error ${e} occured`);
+    }
+  };
+  let mappedSearchResults = images.map((mapppedSearchResult) => {
+    return (
+      <div className="grid-item">
+        {images.length > 0 && (
+          <img loading="lazy" src={mapppedSearchResult.urls.small} alt="" />
+        )}
+      </div>
     );
   });
   return (
@@ -40,15 +66,20 @@ export const SearchBar = () => {
           autoComplete="on"
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <button>{"Search"}</button>
+        <button onClick={searchImages}>{"Search"}</button>
       </div>
-      <div>
-        {inputValue === "" ? (
-          <img src={SearchImage} alt="" />
-        ) : (
-          <div className="search-suggestions">{mappedSuggestions}</div>
-        )}
-      </div>
+
+      {inputValue === "" ? (
+        <div>
+          {inputValue === "" ? (
+            <img src={SearchImage} alt="" />
+          ) : (
+            <div className="search-suggestions">{mappedSuggestions}</div>
+          )}
+        </div>
+      ) : (
+        <div className="grid-container">{mappedSearchResults}</div>
+      )}
     </div>
   );
 };
