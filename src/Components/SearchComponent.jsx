@@ -40,9 +40,7 @@ export const SearchBar = () => {
         `https://api.unsplash.com/search/photos/?client_id=F00UCpYu88LP7MuIWVdSHaf8gM3udxMOEo6QMHwZNzc&query=${inputValue}`
       );
       const data = response.data.results;
-      // setImages((prevImages) => [...prevImages, ...data]);
       setImages(data);
-      console.log(images);
     } catch (e) {
       console.log(`An error ${e} occured`);
     }
@@ -57,29 +55,30 @@ export const SearchBar = () => {
     );
   });
   return (
-    <div className="search-container">
-      <div className="search-bar">
-        <input
-          type="text"
-          name="search"
-          placeholder="Nature"
-          autoComplete="on"
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button onClick={searchImages}>{"Search"}</button>
-      </div>
-
-      {inputValue === "" ? (
-        <div>
-          {inputValue === "" ? (
-            <img src={SearchImage} alt="" />
-          ) : (
-            <div className="search-suggestions">{mappedSuggestions}</div>
-          )}
+    <>
+      <div className="search-container">
+        <div className="search-bar">
+          <input
+            type="text"
+            name="search"
+            placeholder="Nature"
+            autoComplete="on"
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={searchImages}>{"Search"}</button>
         </div>
-      ) : (
-        <div className="grid-container">{mappedSearchResults}</div>
-      )}
-    </div>
+        {images.length === 0 ? (
+          <div>
+            {inputValue === "" ? (
+              <img src={SearchImage} alt="" />
+            ) : (
+              <div className="search-suggestions">{mappedSuggestions}</div>
+            )}
+          </div>
+        ) : (
+          <div className="grid-container">{mappedSearchResults}</div>
+        )}
+      </div>
+    </>
   );
 };
