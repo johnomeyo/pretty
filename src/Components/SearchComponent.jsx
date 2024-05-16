@@ -3,6 +3,7 @@ import SearchImage from "../Assets/search.png";
 import axios from "axios";
 import "./Search.css";
 import "./Grid.css";
+import { ModalComponent } from "./ModalComponent";
 export const SearchBar = () => {
   const suggestions = [
     "Street photography",
@@ -32,6 +33,13 @@ export const SearchBar = () => {
       </p>
     );
   });
+  //handle the modal for viewing the image
+
+  const [toggleModal, setToggleModal] = useState(false);
+  const handleModalChange = () => {
+    setToggleModal(true);
+    console.log("the image is clicked" + toggleModal);
+  };
   // search for images
   const [images, setImages] = useState([]);
   const searchImages = async () => {
@@ -49,13 +57,19 @@ export const SearchBar = () => {
     return (
       <div className="grid-item">
         {images.length > 0 && (
-          <img loading="lazy" src={mapppedSearchResult.urls.small} alt="" />
+          <img
+            loading="lazy"
+            src={mapppedSearchResult.urls.small}
+            alt=""
+            onClick={handleModalChange}
+          />
         )}
       </div>
     );
   });
   return (
     <>
+      {toggleModal && <ModalComponent closeModal={setToggleModal} />}
       <div className="search-container">
         <div className="search-bar">
           <input
