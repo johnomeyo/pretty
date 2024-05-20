@@ -1,10 +1,16 @@
-// import "./Contact.css";
+import "./Contact.css";
+import { useMediaQuery } from "react-responsive";
 export const ContactForm = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   return (
     <div className="contact-form">
       <div className="form">
         <form action="">
-          <h1>We cant wait to hear your ideas!!</h1>
+          {isMobile ? (
+            <h2>We cant wait to hear your ideas!!</h2>
+          ) : (
+            <h1>We cant wait to hear your ideas!!</h1>
+          )}
           <input
             type="text"
             placeholder=" Your name...."

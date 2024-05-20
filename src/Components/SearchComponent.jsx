@@ -45,7 +45,7 @@ export const SearchBar = () => {
   const searchImages = async () => {
     try {
       const response = await axios.get(
-        `https://api.unsplash.com/search/photos/?client_id=F00UCpYu88LP7MuIWVdSHaf8gM3udxMOEo6QMHwZNzc&query=${inputValue}`
+        `https://api.unsplash.com/search/photos/?client_id=F00UCpYu88LP7MuIWVdSHaf8gM3udxMOEo6QMHwZNzc&query=${inputValue}&per_page=30`
       );
       const data = response.data.results;
       setImages(data);

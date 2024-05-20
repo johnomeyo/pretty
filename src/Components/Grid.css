@@ -1,18 +1,26 @@
+
 .grid-container {
-  width: 100dvb;
+  width: 100%;
   margin: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   grid-gap: 5px;
 }
+
 .grid-item {
   background-color: rgb(233, 227, 227);
   height: 300px;
+  display: flex; /* Added to ensure img takes the full height */
+  justify-content: center;
+  align-items: center;
 }
+
 .grid-item img {
   width: 100%;
   height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire area */
 }
+
 @media (max-width: 525px) {
   .grid-container {
     margin: 0;
