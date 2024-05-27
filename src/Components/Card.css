@@ -1,0 +1,40 @@
+.card-container {
+  position: relative;
+  color: white;
+  height: 50vh;
+  border-radius: 10px;
+  width: 300px;
+  margin: 20px;
+  background-color: rgb(223, 221, 221);
+  overflow: hidden;
+  border-radius: 0.625rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+.card-container:hover .card-overlay {
+  opacity: 1;
+  transform: scale(1.05);
+}
+.card-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.card-container img {
+  height: 100%;
+  display: block;
+}
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6); /* Black background with transparency */
+  color: white;
+  padding: 20px;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
