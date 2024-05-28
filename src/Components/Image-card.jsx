@@ -1,18 +1,22 @@
 import "./Card.css";
-export const ImageCard = () => {
+export const ImageCard = (props) => {
   return (
-    <div className="card-container">
+    <article className="card">
       <img
-        src="https://images.unsplash.com/photo-1428366890462-dd4baecf492b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt=""
+        class="card__background"
+        src={props.imageUrl}
+        alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
+        width="1920"
+        height="2193"
       />
-
-      <div className="card-overlay">
-        <div className="card-text">
-          <h2> {"astropphel"}</h2>
-          <p>{"Imma have this soon"}</p>
+      <div class="card__content | flow">
+        <div class="card__content--container | flow">
+          <h2 class="card__title">Astropphel</h2>
+          <p class="card__description">
+          {"Redundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words `image`, `photo,` or `picture` (or any specified custom words)"}
+          </p>
         </div>
       </div>
-    </div>
+    </article>
   );
 };

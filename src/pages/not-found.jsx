@@ -9,9 +9,9 @@ export const NotFound = () => {
     const fetchData = async () => {
       try {
         // Get reference to the collection
-        const querySnapshot = await getDocs(collection(db, "users"));
+        const querySnapshot = await getDocs(collection(db, "posts"));
         // Map through the documents in the collection
-        const docs = querySnapshot.docs.map((doc) => doc.data().username);
+        const docs = querySnapshot.docs.map((doc) => doc.data().imageUrl);
         setData(docs);
       } catch (error) {
         console.error("Error fetching data: ", error);
@@ -22,13 +22,13 @@ export const NotFound = () => {
   }, []);
   return (
     <>
-      <ImageCard />
 
       <div className="not-found">
         <h1>Firestore Data</h1>
         <ul>
-          {data.map((item, index) => (
-            <li key={index}>{JSON.stringify(item)}</li>
+          {data.map((item) => (
+            <ImageCard imageUrl={item} />
+            // <li key={index}>{JSON.stringify(item)}</li>
           ))}
         </ul>
       </div>
