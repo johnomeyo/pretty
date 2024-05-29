@@ -11,9 +11,9 @@ export const ImageCard = (props) => {
       />
       <div class="card__content | flow">
         <div class="card__content--container | flow">
-          <h2 class="card__title">Astropphel</h2>
+          <h2 class="card__title">{props.username}</h2>
           <p class="card__description">
-          {"Redundant alt attribute. Screen-readers already announce `img` tags as an image. You don’t need to use the words `image`, `photo,` or `picture` (or any specified custom words)"}
+          {props.caption}
           </p>
         </div>
       </div>
